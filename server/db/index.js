@@ -1,8 +1,8 @@
 const db = require('./_db');
 const User = require('./models/user');
-const Rendezvous = require('./models/rendezvous');
+const Date = require('./models/date');
 
 module.exports = db;
 
-User.belongsToMany(Rendezvous, { through: 'user_rendezvous' });
-Rendezvous.belongsToMany(User, { through: 'user_rendezvous' });
+User.belongsToMany(Date, { through: 'user_dates' });
+Date.belongsToMany(User, { through: 'user_dates' });
